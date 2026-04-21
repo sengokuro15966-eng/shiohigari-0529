@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🐚 潮干狩りデー 5/29</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: linear-gradient(160deg, #e0f7fa 0%, #b2ebf2 40%, #e8f5e9 100%);
+      min-height: 100vh;
+      padding: 24px 16px 48px;
+    }
+
+    /* ===== ヘッダー ===== */
+    .hero {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .hero .wave-top {
+      font-size: 48px;
+      letter-spacing: -4px;
+      line-height: 1;
+      animation: wave 2s ease-in-out infinite alternate;
+    }
+    @keyframes wave {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-6px); }
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #006064;
+      margin: 12px 0 4px;
+      text-shadow: 0 2px 8px rgba(0,150,180,0.15);
+    }
+    .hero .date-badge {
+      display: inline-block;
+      background: #ffffff;
+      color: #00838f;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 999px;
+      padding: 4px 20px;
+      border: 2px solid #80deea;
+      margin-top: 8px;
+    }
+    .hero .members {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #37474f;
+    }
+
+    /* ===== カードコンテナ ===== */
+    .container {
+      max-width: 620px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* ===== タイムラインカード ===== */
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 20px rgba(0,150,200,0.10);
+      border-left: 6px solid #4dd0e1;
+      position: relative;
+    }
+    .card.highlight {
+      border-left-color: #ff8a65;
+      background: linear-gradient(135deg, #fff8f5 0%, #fff3e0 100%);
+    }
+    .card.lunch {
+      border-left-color: #aed581;
+      background: linear-gradient(135deg, #f9fbe7 0%, #f1f8e9 100%);
+    }
+
+    .card-time {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #006064;
+      letter-spacing: 1px;
+    }
+    .card.highlight .card-time { color: #e64a19; }
+    .card.lunch .card-time { color: #558b2f; }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #263238;
+      margin-top: 2px;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: #607d8b;
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+    .card-icon {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.2rem;
+    }
+
+    /* ===== 矢印 ===== */
+    .arrow {
+      text-align: center;
+      font-size: 1.4rem;
+      color: #80cbc4;
+      margin: -4px 0;
+    }
+
+    /* ===== 注意書きカード ===== */
+    .note-card {
+      background: #fff9c4;
+      border-radius: 16px;
+      padding: 16px 20px;
+      border: 2px dashed #f9a825;
+      font-size: 0.85rem;
+      color: #5d4037;
+      line-height: 1.7;
+    }
+    .note-card strong { color: #e65100; }
+
+    /* ===== ランチ候補 ===== */
+    .restaurant {
+      background: #f1f8e9;
+      border-radius: 16px;
+      padding: 18px 20px;
+      border: 2px solid #c5e1a5;
+    }
+    .restaurant h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #33691e;
+      margin-bottom: 10px;
+    }
+    .rest-item {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      border-left: 4px solid #8bc34a;
+    }
+    .rest-item:last-child { margin-bottom: 0; }
+    .rest-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #2e7d32;
+    }
+    .rest-desc {
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+    .rest-tag {
+      display: inline-block;
+      background: #dcedc8;
+      color: #33691e;
+      font-size: 0.72rem;
+      border-radius: 999px;
+      padding: 2px 10px;
+      margin-top: 6px;
+      margin-right: 4px;
+    }
+
+    /* ===== フッター ===== */
+    .footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: #90a4ae;
+    }
+    .footer .shells {
+      font-size: 1.4rem;
+      letter-spacing: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <div class="hero">
+    <div class="wave-top">🌊🐚🌊🐚🌊</div>
+    <h1>潮干狩りデー！</h1>
+    <div class="date-badge">📅 2026年5月29日（木）</div>
+    <div class="members">👨‍👩‍👧‍👦 7人でわいわい &nbsp;｜&nbsp; 📍 下津海水浴場（茨城県鹿嶋市）</div>
+  </div>
+
+  <div class="container">
+
+    <!-- 出発 -->
+    <div class="card highlight">
+      <div class="card-time">06:00</div>
+      <div class="card-title">🚗 出発！</div>
+      <div class="card-desc">
+        鳩ヶ谷本町4-16-10 を出発<br>
+        外環道→常磐道ルートで約2時間半<br>
+        渋滞を考慮して余裕の早起きスタート ☀️
+      </div>
+      <div class="card-icon">🚙</div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <!-- 休憩 -->
+    <div class="card">
+      <div class="card-time">07:00 〜 07:15</div>
+      <div class="card-title">☕ 休憩タイム（15分）</div>
+      <div class="card-desc">
+        高速SA/PAでトイレ＆ドリンク補給<br>
+        ここでテンションを上げておこう！
+      </div>
+      <div class="card-icon">🥤</div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <!-- 到着 -->
+    <div class="card highlight">
+      <div class="card-time">08:45</div>
+      <div class="card-title">🎉 下津海水浴場 到着！</div>
+      <div class="card-desc">
+        着替え・準備を整えて、いざ海へ🌊<br>
+        日焼け止め・帽子・タオルを忘れずに！
+      </div>
+      <div class="card-icon">🏖️</div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <!-- 潮干狩り -->
+    <div class="card" style="border-left-color:#4fc3f7; background:linear-gradient(135deg,#e1f5fe,#f0f9ff);">
+      <div class="card-time" style="color:#0277bd;">09:00 〜 11:20</div>
+      <div class="card-title">🐚 潮干狩り！（約2時間20分）</div>
+      <div class="card-desc">
+        ハマグリをたっぷり掘ろう🦪 無料・入場自由！<br>
+        🦶 足でグリグリして探すのがコツ（熊手使用禁止）<br>
+        ⏰ 干潮8:52（潮位34cm）— ベストタイミング✅<br>
+        📏 3cm以上の貝のみ・1人1kgまでのルールあり
+      </div>
+      <div class="card-icon">🌊</div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <!-- 移動 -->
+    <div class="card">
+      <div class="card-time">11:20 〜 11:40</div>
+      <div class="card-title">🚗 ランチへ移動</div>
+      <div class="card-desc">着替え・荷物まとめて出発！</div>
+      <div class="card-icon">🧳</div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <!-- ランチ -->
+    <div class="card lunch">
+      <div class="card-time">12:00 〜 13:30</div>
+      <div class="card-title">🍽️ 鈴章（すずしょう）でランチ！</div>
+      <div class="card-desc">
+        明治30年創業・鹿島神宮参道の老舗でごちそう🎉<br>
+        うなぎ・海鮮・天ぷら でテンション⤴⤴<br>
+        掘りごたつ個室でゆったり ／ ¥2,000〜2,999
+      </div>
+      <div class="card-icon">🦞</div>
+    </div>
+
+    <!-- ランチ候補 -->
+    <div class="restaurant">
+      <h3>🍴 ランチおすすめ候補（7名・要予約）</h3>
+
+      <div class="rest-item" style="border-left-color:#ff8a65;">
+        <div class="rest-name">🥇 鈴章（すずしょう）【第一候補】</div>
+        <div class="rest-desc">
+          明治30年創業・鹿島神宮参道の老舗日本料理店。<br>
+          うなぎ・海鮮・天ぷらが絶品。掘りごたつ個室あり（10〜30名対応）。<br>
+          ランチ ¥2,000〜¥2,999 ／ 食べログ評価 ★3.40<br>
+          営業 11:00〜16:00（月曜定休）
+        </div>
+        <span class="rest-tag">🏯 老舗の雰囲気</span>
+        <span class="rest-tag">📞 予約可 0299-82-1417</span>
+        <span class="rest-tag">🚪 個室あり</span>
+        <span class="rest-tag">👨‍👩‍👧 7名◎</span>
+      </div>
+
+      <div class="rest-item">
+        <div class="rest-name">🌊 浜茶屋 やましょう【第二候補】</div>
+        <div class="rest-desc">
+          目の前で焼く生簀の海鮮が圧巻！蛤・地蛸の炭火焼き。<br>
+          釜戸炊きご飯おかわり無料が嬉しい。最大99名収容。<br>
+          ランチ ¥2,000〜¥2,999 ／ 食べログ評価 ★3.43<br>
+          営業 10:00〜16:00（要電話確認）
+        </div>
+        <span class="rest-tag">🔥 炭火海鮮</span>
+        <span class="rest-tag">🍚 ご飯おかわり無料</span>
+        <span class="rest-tag">📞 要電話確認</span>
+      </div>
+
+      <div class="rest-item" style="border-left-color:#ff8a65;">
+        <div class="rest-name">📌 予約のコツ</div>
+        <div class="rest-desc">
+          ・<strong>1〜2週間前までに予約</strong>を！（5/29は木曜・昼）<br>
+          ・「7名・個室希望・11時45分頃到着予定」と伝えると◎<br>
+          ・鈴章は月曜定休なので注意（5/29木曜はOK）
+        </div>
+      </div>
+    </div>
+
+    <!-- 注意書き -->
+    <div class="note-card">
+      <strong>📌 持ち物チェックリスト</strong><br>
+      🧴 日焼け止め　👒 帽子　👙 着替え<br>
+      🪣 バケツ　🛍️ 貝を入れる袋・ネット　👟 濡れてもいい靴<br>
+      💧 飲み物・おやつ　📷 カメラ　🗺️ 現地地図確認<br><br>
+      <strong>⚠️ 渋滞注意ポイント</strong><br>
+      5月の木曜朝は比較的スムーズですが、<strong>6時ちょうど出発</strong>が安全ライン。<br>
+      Googleマップでリアルタイム渋滞確認しながら走ろう！
+    </div>
+
+    <!-- フッター -->
+    <div class="footer">
+      <div class="shells">🐚🌊🐚🌊🐚</div>
+      <div style="margin-top:8px;">楽しい潮干狩りになりますように！</div>
+    </div>
+
+  </div>
+</body>
+</html>
